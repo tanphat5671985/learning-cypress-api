@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-22T08:25:29.723Z",
+    "end": "2024-03-22T08:25:29.834Z",
+    "duration": 111,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4b38c3c9-6787-4dd5-a843-2172f02a2163",
+      "title": "",
+      "fullFile": "cypress\\test_scripts\\TC002_GET_request_more.js",
+      "file": "cypress\\test_scripts\\TC002_GET_request_more.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9d683526-734a-4737-a958-f03a66caf5cf",
+          "title": "Test GET request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to send GET request and verify the response",
+              "fullTitle": "Test GET request should be able to send GET request and verify the response",
+              "timedOut": null,
+              "duration": 95,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  method: 'GET'\n}).then(response => {\n  //Destructure\n  let {\n    status,\n    body\n  } = response;\n  expect(status).to.eq(200);\n  expect(body.length).to.eq(100);\n  //get random element from array object\n  let randomIndex = Math.random() * body.length;\n  let roundedRandomIndex = Math.floor(randomIndex);\n  let randomObject = body[roundedRandomIndex];\n  //verification\n  verifyNotEmpty('userID', randomObject.userId);\n  verifyNotEmpty('id', randomObject.id);\n  verifyNotEmpty('title', randomObject.title);\n  verifyNotEmpty('body', randomObject.body);\n});",
+              "err": {},
+              "uuid": "aba39138-cff3-43a2-a2fd-f7ce03b19408",
+              "parentUUID": "9d683526-734a-4737-a958-f03a66caf5cf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aba39138-cff3-43a2-a2fd-f7ce03b19408"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 95,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "result",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

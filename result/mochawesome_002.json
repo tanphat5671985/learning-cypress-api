@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-22T08:25:32.222Z",
+    "end": "2024-03-22T08:25:33.071Z",
+    "duration": 849,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6b58e8ad-da0d-43ea-98bb-a0d9860005c7",
+      "title": "",
+      "fullFile": "cypress\\test_scripts\\TC003_POST_request.js",
+      "file": "cypress\\test_scripts\\TC003_POST_request.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7aed440f-3a6c-49ea-aec8-3e73c5efe8e9",
+          "title": "Test POST request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to send a POST request and get response",
+              "fullTitle": "Test POST request should be able to send a POST request and get response",
+              "timedOut": null,
+              "duration": 830,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let url = 'https://jsonplaceholder.typicode.com/posts';\nlet header = {\n  'Content-type': 'application/json; charset=UTF-8'\n};\nlet requestBody = {\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n};\nlet requestObject = {\n  method: 'POST',\n  url: url,\n  headers: header,\n  body: requestBody\n};\ncy.request(requestObject).then(res => {\n  //cy.log(JSON.stringify(res))\n  let {\n    status,\n    body\n  } = res;\n  expect(status).to.eq(201, 'Status is not 201');\n  let {\n    userId,\n    id,\n    title\n  } = body;\n  let responseBody = body.body;\n  expect(userId).to.eq(requestBody.userId, 'userId is not correct');\n  expect(id).to.eq(101, 'id is not correct'); //set 101\n  expect(title).to.eq(requestBody.title, 'title is not correct');\n  expect(responseBody).to.eq(requestBody.body, 'body is not correct');\n});",
+              "err": {},
+              "uuid": "2169a4fb-78b5-48f4-9704-44641f1ba63c",
+              "parentUUID": "7aed440f-3a6c-49ea-aec8-3e73c5efe8e9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2169a4fb-78b5-48f4-9704-44641f1ba63c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 830,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "result",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
