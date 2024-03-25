@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2024-03-25T06:33:38.911Z",
-    "end": "2024-03-25T06:33:38.972Z",
-    "duration": 61,
+    "start": "2024-03-25T06:45:33.695Z",
+    "end": "2024-03-25T06:45:33.736Z",
+    "duration": 41,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "eb805345-26e2-4399-b729-0b74d2492165",
+      "uuid": "15027122-8a1b-4c49-8abd-24247df16c1d",
       "title": "",
       "fullFile": "cypress\\test_scripts\\TC007_custom_commands.js",
       "file": "cypress\\test_scripts\\TC007_custom_commands.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b3823f37-83af-43b3-b141-4655731d12aa",
+          "uuid": "e39a5519-f3f1-4ee6-b1b4-bb4671202978",
           "title": "Testing handle async request",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "should be able to wait until a request resolved",
               "fullTitle": "Testing handle async request should be able to wait until a request resolved",
               "timedOut": null,
-              "duration": 33,
+              "duration": 22,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "//CRUD\n//let url = 'https://jsonplaceholder.typicode.com/posts'\nlet url = Cypress.env('baseUrl');\n//Run cmd: yarn test --spec cypress/test_scripts/TC007_custom_commands.js --env baseUrl=https://jsonplaceholder.typicode.com/posts\n//let header = {'Content-type': 'application/json; charset=UTF-8',}\nlet createdPostBody = {\n  title: 'foo',\n  body: 'bar',\n  userId: 1\n};\nlet updatedPostBody = {\n  title: 'fooqqqqq',\n  body: 'bar',\n  userId: 1\n};\ncy.createPost(createdPostBody).then(res => {\n  cy.getPost((Number(res.body.id) - 1).toString()).then(res => {\n    cy.request({\n      method: 'PUT',\n      url: url + '/' + res.body.id,\n      headers: header,\n      body: updatedPostBody\n    }).then(res => {\n      cy.request({\n        method: \"DELETE\",\n        url: url + '/' + res.body.id\n      }).then(res => {\n        cy.log(JSON.stringify(res));\n      });\n    });\n  });\n});",
               "err": {},
-              "uuid": "cc116093-ebc5-4a70-a6dc-ce63b3197350",
-              "parentUUID": "b3823f37-83af-43b3-b141-4655731d12aa",
+              "uuid": "53277b3e-882d-4e53-adbc-40b5bd0e52a2",
+              "parentUUID": "e39a5519-f3f1-4ee6-b1b4-bb4671202978",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "cc116093-ebc5-4a70-a6dc-ce63b3197350"
+            "53277b3e-882d-4e53-adbc-40b5bd0e52a2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 33,
+          "duration": 22,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -1,5 +1,5 @@
 .vscode
-mochawesome -report
+mochawesome-report
 node_modules
 result
 index.json

@@ -7,11 +7,11 @@
     "test": "cypress run",
     "open": "cypress open",
     "dev": "node_modules\\.bin\\cypress run",
-    "test:mocha-reporter": "yarn test --reporter mochawesome --reporter-options reportDir=\"result\",overwrite=false,html=false,json=true",
+    "dev:mocha-reporter": "npm run dev --reporter mochawesome --reporter-options reportDir=\"result\",overwrite=false,html=false,json=true",
     "merge-report": "mochawesome-merge \"result/*.json\" > index.json",
     "build-report": "marge index.json",
-    "open-report": "yarn merge-report && yarn build-report && serve mochawesome-report",
-    "run-test": "cypress run --env baseUrl=https://jsonplaceholder.typicode.com/posts && yarn open-report"
+    "open-report": "npm run merge-report && npm run build-report && serve mochawesome-report",
+    "run-dev": "cypress run --env baseUrl=https://jsonplaceholder.typicode.com/posts && npm run open-report"
   },
   "keywords": [],
   "author": "",
