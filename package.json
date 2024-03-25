@@ -6,6 +6,7 @@
   "scripts": {
     "test": "cypress run",
     "open": "cypress open",
+    "dev": "node_modules\\.bin\\cypress run",
     "test:mocha-reporter": "yarn test --reporter mochawesome --reporter-options reportDir=\"result\",overwrite=false,html=false,json=true",
     "merge-report": "mochawesome-merge \"result/*.json\" > index.json",
     "build-report": "marge index.json",
